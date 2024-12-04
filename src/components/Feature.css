@@ -1,7 +1,7 @@
 .feature-list-container {
   padding: 20px 20px;
   height: 300px;
-}
+  background-color: #1f2937;}
 
 .titles-container {
   display: flex;
@@ -12,17 +12,18 @@
 .feature-list-title {
   font-size: 34px;
   font-weight: bold;
-  color: white;
+  color: #eab308; 
 }
 
 .feature-list-more {
   font-size: 18px;
-  color: white;
+  color: #f3f4f6; 
   transition: all 0.3s ease-in-out;
 }
 
 .feature-list-more:hover {
   text-decoration: underline;
+  color: #d97706; 
   cursor: pointer;
 }
 
@@ -45,6 +46,7 @@
   height: 220px;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+  background-color: #374151;
 }
 
 .feature-list-item:hover .feature-list-item-img {
@@ -65,6 +67,7 @@
   border-radius: 8px;
   transition: transform 0.3s ease-in-out;
   position: relative;
+  filter: brightness(80%); 
 }
 
 .feature-list-item-title,
@@ -73,7 +76,7 @@
   position: absolute;
   left: 10px;
   right: 10px;
-  color: white;
+  color: #f3f4f6; 
   transition: opacity 0.3s ease-in-out;
 }
 
@@ -95,16 +98,17 @@
 .feature-list-item-button {
   bottom: 40px;
   padding: 8px 15px;
-  background-color: white;
-  color: black;
+  background-color: #eab308; 
+  color: #1f2937; 
   border-radius: 10px;
   border: none;
   opacity: 0;
   z-index: 2;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .feature-list-item-button:hover {
-  background-color: gray;
+  background-color: #d97706; 
   cursor: pointer;
 }
 

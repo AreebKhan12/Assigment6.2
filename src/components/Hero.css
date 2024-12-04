@@ -3,6 +3,7 @@
   height: 70vh;
   width: 100%;
   overflow: hidden;
+  background-color: #1f2937;
 }
 
 .featured-content {
@@ -16,11 +17,11 @@
   justify-content: center;
   align-items: flex-start;
   padding: 80px;
-  color: white;
+  color: #f3f4f6; 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .featured-title {
@@ -30,13 +31,15 @@
   padding: 0;
   text-transform: uppercase;
   letter-spacing: 1px;
+  color: #eab308;
 }
 
 .featured-text {
   font-size: 1rem;
   max-width: 600px;
   margin-top: 15px;
-  line-height: 1.4;
+  line-height: 1.6;
+  color: #f3f4f6; 
 }
 
 .featured-button-container {
@@ -47,22 +50,24 @@
 
 .featured-button {
   padding: 12px 30px;
-  background-color: rgb(255, 255, 255);
-  color: rgb(0, 0, 0);
+  background-color: #eab308; 
+  color: #1f2937; 
   font-size: 1rem;
   font-weight: bold;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px; 
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
   text-decoration: none;
 }
 
 .featured-button a {
   text-decoration: none;
-  color: inherit;
+  color: inherit; 
 }
 
 .featured-button:hover {
-  background-color: rgb(130, 130, 130);
+  background-color: #d97706; 
+  transform: scale(1.05); 
 }
+

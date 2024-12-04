@@ -4,6 +4,7 @@ import "./Genres.css";
 
 function Genres({ genres }) {
   const location = useLocation();
+  const allowedGenreIds = [28, 12, 16, 35, 80, 10751, 14, 36, 27];
 
   return (
     <div className="genres-container">
