@@ -1,10 +1,11 @@
 .movie-list-container {
   padding: 0 20px;
-  color: white;
+  color: #1f2937;
 }
 
 .movie-list-container:hover .arrow {
   opacity: 1;
+  color: #eab308; 
 }
 
 .movie-list-wrapper {
@@ -17,26 +18,28 @@
   align-items: center;
   height: 230px;
   transform: translateX(0);
-  transition: all .5s ease-in-out;
-  margin-bottom: 30px;
-  margin-top: 10px;
+  transition: all 0.5s ease-in-out;
+  margin: 10px 0 30px;
 }
 
 .movie-list-item {
-  margin-right: 8px;
+  margin-right: 20px; 
   position: relative;
   z-index: 1;
+  width: calc(25% - 20px); 
+  transition: all 0.3s ease-in-out;
+  background-color: #374151; 
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.movie-list-item:hover {
+  z-index: 100;
 }
 
 .movie-list-item:hover .movie-list-item-img {
   transform: scale(1.1);
-  opacity: 0.2;
-  margin: 10px;
-}
-
-
-.movie-list-item:hover {
-  z-index: 100;
+  opacity: 0.3;
 }
 
 .movie-list-item:hover .movie-list-item-title,
@@ -46,68 +49,77 @@
 }
 
 .movie-list-item-img {
-  width: 270px;
+  width: 100%;
   height: 200px;
   object-fit: cover;
-  transition: all .4s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  filter: brightness(80%); 
   border-radius: 8px;
 }
 
 .movie-list-item-title {
-  min-width: 300px;
-  color: white;
-  justify-self: center;
-  padding: 0 10px;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
+  color: #f3f4f6; 
   position: absolute;
-  top: 10%;
-  left: 5px;
+  top: 10px;
+  left: 10px;
   opacity: 0;
-  transition: all 0.5s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 2;
 }
 
 .movie-list-item-description {
-  padding: 10px;
-  color: white;
   font-size: 14px;
+  color: #f3f4f6;
   position: absolute;
-  top: 25%;
-  left: 5px;
-  width: 200px;
+  top: 55px;
+  left: 10px;
   opacity: 0;
-  transition: all 0.5s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 2;
 }
 
 .movie-list-item-button {
-  padding: 10px 90px;
-  background-color: white;
-  color: black;
+  padding: 8px 15px;
+  background-color: #eab308; 
+  color: #1f2937; 
   border-radius: 10px;
-  outline: none;
   border: none;
   cursor: pointer;
   position: absolute;
   bottom: 20px;
-  left: 20px;
+  left: 10px;
   opacity: 0;
-  transition: opacity 0.5s ease-in-out, background-color 0.2s ease-in-out;
-  white-space: nowrap;
-  width: auto;
-  min-width: 120px;
+  transition: opacity 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 .movie-list-item-button:hover {
-  background-color: gray;
+  background-color: #d97706; 
 }
-
 
 .arrow {
   font-size: 60px;
   position: absolute;
   top: 90px;
   right: 10px;
-  color: white;
+  color: #f3f4f6;
   opacity: 0;
   transition: all 0.5s ease-in-out;
 }
+
+.arrow:hover {
+  color: #d97706; 
+}
+/* 
+@media only screen and (max-width: 800px) {
+  .movie-list-item {
+    width: 48%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .movie-list-item {
+    width: 100%;
+  }
+} */

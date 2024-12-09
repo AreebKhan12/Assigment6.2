@@ -9,7 +9,7 @@ function MoviesView() {
   const genres = [
     { genre: "Action", id: 28 },
     { genre: "Adventure", id: 12 },
-    { genre: "Comedy", id: 35 },
+    { genre: "Comedy", id: 35 },   
     // { genre: "Drama", id: 18 },
     { genre: "Horror", id: 27 },
     // { genre: "Romance", id: 10749 },
