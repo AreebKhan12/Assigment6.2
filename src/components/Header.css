@@ -3,13 +3,14 @@
   top: 0;
   width: 100%;
   height: 50px;
-  background-color:  #1f2937;
+  background-color: #1f2937;
   z-index: 1000;
 }
 
 .navbar-container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 0 50px;
   height: 100%;
   color: white;
@@ -35,6 +36,8 @@
 .menu-list {
   display: flex;
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .menu-list-item {
@@ -58,15 +61,19 @@
   text-decoration: none;
 }
 
+.welcome-container {
+  margin-right: 15px;
+  font-size: 14px;
+}
+
 .search-bar {
   display: flex;
-  margin: 15px;
+  margin: 0 15px;
   align-items: center;
   justify-content: flex-end;
-  width: max-content;
-  height: 20px;
+  height: 32px;
   padding: 6px;
-  border-radius: 28px;
+  border-radius: 16px;
   background: #c8c7c7;
   transition: background 0.25s;
 }
@@ -92,12 +99,11 @@
 
 .search-input::placeholder,
 .search-icon {
-  color: rgba(0, 0, 0, .5);
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .search-icon {
   font-size: 18px;
-  color: rgba(0, 0, 0, .5);
   cursor: pointer;
   border: none;
   outline: none;
@@ -112,10 +118,21 @@
   cursor: pointer;
 }
 
+.sign-in-container {
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+}
+
+.sign-in-button-container {
+  margin-right: 10px;
+}
+
 .signin-btn {
   display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 5px 15px;
-  margin: 5px;
   font-size: 14px;
   font-weight: bold;
   background-color: #eab308;
@@ -128,12 +145,26 @@
 }
 
 .signin-btn:hover {
-  background-color:  #eab308;
-  border-color:  #eab308;
+  background-color: #eab308;
+  border-color: #eab308;
+}
+
+.sign-in-button-container a i {
+  margin-right: 8px;
 }
 
 @media only screen and (max-width: 940px) {
   .menu-container {
     display: none;
+  }
+  .search-bar {
+    margin: 0;
+  }
+  .sign-in-container {
+    flex-direction: column;
+    margin-left: 0;
+  }
+  .sign-in-button-container {
+    margin: 5px 0;
   }
 }

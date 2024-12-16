@@ -1,46 +1,65 @@
 import { useNavigate, Link } from 'react-router-dom';
+import { useStoreContext } from '../contexts/Context';
 import { useState } from 'react';
 import './SignInView.css';
 
 function SignInView() {
   const navigate = useNavigate();
-  const [pass, setPass] = useState('');
-  const password = "iloveyou";
+  const [emailInput, setEmailInput] = useState('');
+  const [passInput, setPassInput] = useState('');
+
+  const { email, pass, setSignedIn } = useStoreContext();
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if (pass === password) {
+    if (emailInput === email && passInput === pass) {
       navigate('/');
+      setSignedIn(true);
     } else {
-      alert('Wrong Password');
-      console.log(pass);
+      alert('Wrong email or password');
     }
   };
 
   return (
-    <div className="sign-in-page">
-      <div className="sign-in">
-        <h2>SIGN IN</h2>
-        <form onSubmit={handleSubmit}>
-          <div className="info">
-            <input type="email" name="email" required />
-            <label>Email</label>
-          </div>
-          <div className="info">
-            <input type="password" name="password" onChange={(event) => { setPass(event.target.value) }} required />
-            <label>Password</label>
-          </div>
-          <button className="sign-in-btn" type="submit">Sign In</button>
-          <div className="help">
-            <div className="remember">
-              <input type="checkbox" id="remember" />
-              <label htmlFor="remember">Remember me</label>
+    <div>
+      <nav className="logo-nav">
+        <Link to="/">
+          <img src="../src/imgs/logo.png" alt="Logo" />
+        </Link>
+      </nav>
+      <div className="sign-in-page">
+        <div className="sign-in">
+          <h2>SIGN IN</h2>
+          <form onSubmit={handleSubmit}>
+            <div className="info">
+              <input
+                type="email"
+                name="email"
+                onChange={(event) => setEmailInput(event.target.value)}
+                required
+                value={emailInput}
+              />
+              <label>Email</label>
             </div>
-            <Link to="#">Need help?</Link>
-          </div>
-        </form>
-        <p>New to Cinestream? <Link to="/signup">Sign up now</Link></p>
+            <div className="info">
+              <input
+                type="password"
+                name="password"
+                onChange={(event) => setPassInput(event.target.value)}
+                required
+                value={passInput}
+              />
+              <label>Password</label>
+            </div>
+            <button className="sign-in-btn" type="submit">Sign In</button>
+            <div className="help">
+              <Link to="#">Need help?</Link>
+            </div>
+          </form>
+          <p>New to Flixit? <Link to="/signup">Sign up now</Link></p>
+        </div>
       </div>
     </div>
   );

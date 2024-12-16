@@ -11,7 +11,6 @@ function HomeView() {
       <Header />
       <Hero />
       <Feature />
-      <Hero />
       <ScrollFeature />
       <Footer />
     </div>

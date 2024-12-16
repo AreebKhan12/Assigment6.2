@@ -81,4 +81,48 @@
     font-size: 0.8rem;
     padding: 6px 10px;
   }
+
+  .trailer-section {
+    margin-top: 20px;
+  }
+  
+  .trailer-text {
+    font-size: 1.5rem;
+    color: #fff;
+  }
+  
+  .trailers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .trailer-tile {
+    text-align: center;
+  }
+  
+  .trailer-thumbnail {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .add-to-cart-button {
+    width: 100%;
+    padding: 16px 0;
+    font-size: 1rem;
+    border: none;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 4px;
+    margin: 20px 0 10px;
+    background:  #eab308; 
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+  
+  .add-to-cart-button:hover {
+    background: #eab308; 
+    transform: scale(1.05);
+  }
 }

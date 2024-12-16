@@ -151,4 +151,9 @@ form .help :where(label, a) {
   .info {
     margin-bottom: 20px;
   }
+
+  .Genreselector {
+margin-top: 10px;
+  }
 }
+

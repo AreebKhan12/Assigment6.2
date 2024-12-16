@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import AddToCartButton from "../components/AddCart.jsx";
 import "./DetailView.css";
 
 function DetailView() {
   const { id } = useParams();
-  const [movie, setMovie] = useState();
+  const [movie, setMovie] = useState(null);
   const [trailers, setTrailers] = useState([]);
 
   useEffect(() => {
@@ -18,11 +19,10 @@ function DetailView() {
       const videosResponse = await axios.get(
         `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${import.meta.env.VITE_TMDB_KEY}`
       );
-      setTrailers(videosResponse.data.results);
+      setTrailers(videosResponse.data.results.filter((video) => video.type === "Trailer"));
     }
-
     fetchMovieDetails();
-  }, [id]);
+  }, []);
 
   return (
     <div className="detail-view-container">
@@ -34,15 +34,16 @@ function DetailView() {
             alt={movie.title}
             className="detail-view-poster"
           />
-          <button className="add-to-cart-button">
-            Add to Cart
-          </button>
-          <p className="detail-info"><span>Overview:</span> {movie.overview}</p>
+          <div className="add-to-cart-button">
+            <AddToCartButton movie={movie} variant="detail-view" />
+          </div>
+          <p className="detail-info"><span>Overview: </span>{movie.overview}</p>
           <p className="detail-info"><span>Release Date:</span> {movie.release_date}</p>
           <p className="detail-info"><span>Rating:</span> {movie.vote_average}</p>
           <p className="detail-info"><span>Genres:</span> {movie.genres.map((g) => g.name).join(", ")}</p>
           <p className="detail-info"><span>Runtime:</span> {movie.runtime} minutes</p>
           <p className="detail-info"><span>Language:</span> {movie.original_language}</p>
+          <p className="detail-info"><span>Revenue:</span> {movie.revenue}$</p>
 
           {trailers.length > 0 && (
             <div className="trailer-section">

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
+import AddToCartButton from "../components/AddCart.jsx";
 import "./GenreView.css";
 
 function GenreView() {
@@ -16,24 +17,27 @@ function GenreView() {
       setMovies(response.data.results);
     }
     fetchMovies();
-  }, [genre_id, page]);
+  }, []);
 
   return (
     <div>
       <h2>Movies in Genre</h2>
       <div className="genre-view-container">
         {movies.map((movie) => (
-          <div key={movie.id} className="genre-view-item">
-            <Link to={`/movies/details/${movie.id}`}>
-              <img
-                src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
-                alt={movie.title}
-                className="genre-view-image"
-              />
-            </Link>
+          <div key={movie.id}>
+            <div className="genre-view-item">
+              <Link to={`/movies/details/${movie.id}`}>
+                <img
+                  src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
+                  alt={movie.title}
+                  className="genre-view-image"
+                />
+              </Link>
+
+            </div>
+            <AddToCartButton movie={movie} variant="detail-view" />
           </div>
         ))}
-
       </div>
       <div className="genre-view-pagination-container">
         <button
@@ -49,7 +53,6 @@ function GenreView() {
           Next
         </button>
       </div>
-
     </div>
   );
 }
